@@ -6,6 +6,7 @@ import Solution from "@/components/sections/Solution";
 import HowItWorks from "@/components/sections/HowItWorks";
 import ROI from "@/components/sections/ROI";
 import Features from "@/components/sections/Features";
+import Pricing from "@/components/sections/Pricing";
 import Testimonial from "@/components/sections/Testimonial";
 import AuditForm from "@/components/sections/AuditForm";
 import FinalCTA from "@/components/sections/FinalCTA";
@@ -24,6 +25,7 @@ const Index = () => {
         <HowItWorks />
         <ROI />
         <Features />
+        <Pricing />
         <Testimonial />
         <AuditForm />
         <FinalCTA />
