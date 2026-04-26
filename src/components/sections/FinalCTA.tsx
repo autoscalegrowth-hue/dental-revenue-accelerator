@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, CalendarCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { CALENDLY_URL } from "@/lib/links";
 
 const FinalCTA = () => {
   return (
@@ -26,7 +27,7 @@ const FinalCTA = () => {
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Button asChild variant="accent" size="xl">
-                <a href="#audit"><CalendarCheck /> Book a Call</a>
+                <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer"><CalendarCheck /> Book a Call</a>
               </Button>
               <Button asChild variant="outlineLight" size="xl">
                 <a href="#audit">Get Free Audit <ArrowRight /></a>

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, PlayCircle, ShieldCheck, Clock, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { CALENDLY_URL } from "@/lib/links";
 
 const Hero = () => {
   return (
@@ -57,8 +58,8 @@ const Hero = () => {
             </a>
           </Button>
           <Button asChild variant="outlineLight" size="xl">
-            <a href="#how">
-              <PlayCircle /> See How It Works
+            <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
+              <PlayCircle /> Book a Call
             </a>
           </Button>
         </motion.div>

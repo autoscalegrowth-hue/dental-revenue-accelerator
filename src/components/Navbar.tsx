@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo.png";
 import { Button } from "@/components/ui/button";
+import { CALENDLY_URL } from "@/lib/links";
 
 const links = [
   { href: "#problem", label: "Problem" },
@@ -53,7 +54,7 @@ const Navbar = () => {
 
         <div className="hidden lg:block">
           <Button asChild variant="accent" size="lg">
-            <a href="#audit">Get Free Audit</a>
+            <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">Book a Call</a>
           </Button>
         </div>
 
@@ -80,7 +81,7 @@ const Navbar = () => {
               </a>
             ))}
             <Button asChild variant="accent" size="lg" className="mt-3">
-              <a href="#audit" onClick={() => setOpen(false)}>Get Free Audit</a>
+              <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)}>Book a Call</a>
             </Button>
           </div>
         </div>
