@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
+import { CALENDLY_URL } from "@/lib/links";
 
 const auditSchema = z.object({
   name: z.string().trim().min(2, "Please enter your name").max(80),
@@ -38,7 +39,11 @@ const AuditForm = () => {
     await new Promise((r) => setTimeout(r, 900));
     setLoading(false);
     setDone(true);
-    toast.success("Audit request received. We'll be in touch within 24 hours.");
+    toast.success("Audit request received. Opening our calendar so you can pick a time…");
+    // Send them straight to Calendly so the meeting lands in your account.
+    setTimeout(() => {
+      window.open(CALENDLY_URL, "_blank", "noopener,noreferrer");
+    }, 600);
   };
 
   return (
