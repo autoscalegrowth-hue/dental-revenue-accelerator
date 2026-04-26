@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Check, Sparkles, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { CALENDLY_URL } from "@/lib/links";
 
 type Plan = {
   name: string;
@@ -150,7 +151,7 @@ const Pricing = () => {
                   size="lg"
                   className={`mt-6 w-full ${!plan.highlight ? "border-white/20 bg-white/5 text-white hover:bg-white/10" : ""}`}
                 >
-                  <a href="#audit">{plan.cta}</a>
+                  <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">{plan.cta}</a>
                 </Button>
 
                 <ul className="mt-7 space-y-3">
