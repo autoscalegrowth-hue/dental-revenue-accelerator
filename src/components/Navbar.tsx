@@ -32,9 +32,7 @@ const Navbar = () => {
     >
       <nav className="container-px mx-auto flex h-16 max-w-7xl items-center justify-between md:h-20">
         <a href="#top" className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white p-1 shadow-card-soft">
-            <img src={logo} alt="OrthoAutomate" className="h-full w-full object-contain" />
-          </div>
+          <img src={logo} alt="OrthoAutomate" className="h-10 w-auto object-contain" />
           <span className="font-display text-lg font-bold text-white">
             Ortho<span className="text-gradient">Automate</span>
           </span>
