@@ -11,7 +11,7 @@ const FinalCTA = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-primary via-[hsl(220_70%_18%)] to-[hsl(220_60%_22%)] p-10 text-center shadow-elevated md:p-20"
+          className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-primary via-[hsl(258_60%_22%)] to-[hsl(268_70%_28%)] p-10 text-center shadow-elevated md:p-20"
         >
           <div className="absolute inset-0 grid-bg opacity-30" />
           <div className="absolute -top-20 left-1/2 h-[400px] w-[400px] -translate-x-1/2 rounded-full bg-accent/25 blur-[120px]" />

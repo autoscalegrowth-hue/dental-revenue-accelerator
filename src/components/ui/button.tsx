@@ -16,9 +16,9 @@ const buttonVariants = cva(
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
         accent:
-          "bg-gradient-to-r from-accent to-[hsl(20_95%_58%)] text-accent-foreground shadow-accent-glow hover:shadow-[0_24px_50px_-12px_hsl(14_92%_62%/0.6)] hover:-translate-y-0.5 transition-all",
+          "bg-gradient-to-r from-accent to-[hsl(290_90%_62%)] text-accent-foreground shadow-accent-glow hover:shadow-[0_24px_60px_-12px_hsl(268_92%_66%/0.7)] hover:-translate-y-0.5 transition-all",
         cyan:
-          "bg-gradient-to-r from-secondary to-[hsl(200_95%_55%)] text-secondary-foreground shadow-cyan-glow hover:-translate-y-0.5 transition-all",
+          "bg-gradient-to-r from-secondary to-[hsl(190_95%_55%)] text-secondary-foreground shadow-cyan-glow hover:-translate-y-0.5 transition-all",
         outlineLight:
           "border border-white/25 bg-white/5 text-white backdrop-blur-sm hover:bg-white/10 transition-all",
       },
