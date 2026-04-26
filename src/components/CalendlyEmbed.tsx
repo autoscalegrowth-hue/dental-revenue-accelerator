@@ -50,7 +50,8 @@ const CalendlyEmbed = ({
   return (
     <div
       ref={ref}
-      className={`calendly-inline-widget ${className ?? ""}`}
+      data-url={url}
+      className={className}
       style={{
         minWidth: typeof minWidth === "number" ? `${minWidth}px` : minWidth,
         height: typeof height === "number" ? `${height}px` : height,
