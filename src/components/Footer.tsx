@@ -8,9 +8,7 @@ const Footer = () => {
         <div className="grid gap-12 md:grid-cols-[1.5fr_1fr_1fr_1fr]">
           <div>
             <div className="flex items-center gap-3">
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-white p-1">
-                <img src={logo} alt="OrthoAutomate" className="h-full w-full object-contain" />
-              </div>
+              <img src={logo} alt="OrthoAutomate" className="h-11 w-auto object-contain" />
               <span className="font-display text-lg font-bold text-white">
                 Ortho<span className="text-gradient">Automate</span>
               </span>
