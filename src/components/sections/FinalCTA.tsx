@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, CalendarCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { CALENDLY_URL } from "@/lib/links";
+import CalendlyDialog from "@/components/CalendlyDialog";
 
 const FinalCTA = () => {
   return (
@@ -26,9 +26,9 @@ const FinalCTA = () => {
               Every week you wait is another $1,500–$3,000 walking out the door. Let's stop the bleed.
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Button asChild variant="accent" size="xl">
-                <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer"><CalendarCheck /> Book a Call</a>
-              </Button>
+              <CalendlyDialog>
+                <Button variant="accent" size="xl"><CalendarCheck /> Book a Call</Button>
+              </CalendlyDialog>
               <Button asChild variant="outlineLight" size="xl">
                 <a href="#audit">Get Free Audit <ArrowRight /></a>
               </Button>
