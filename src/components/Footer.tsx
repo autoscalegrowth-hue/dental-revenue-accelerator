@@ -1,4 +1,4 @@
-import { Mail, Linkedin, Instagram, Twitter } from "lucide-react";
+import { Mail, Phone, Facebook, Instagram, Twitter } from "lucide-react";
 import logo from "@/assets/logo.png";
 
 const Footer = () => {
@@ -21,11 +21,11 @@ const Footer = () => {
             </p>
             <div className="mt-6 flex gap-3">
               {[
-                { icon: Linkedin, href: "#" },
+                { icon: Facebook, href: "https://www.facebook.com/orthoautomate" },
                 { icon: Instagram, href: "#" },
                 { icon: Twitter, href: "#" },
               ].map((s, i) => (
-                <a key={i} href={s.href} className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-white/70 transition-colors hover:bg-white/10 hover:text-white">
+                <a key={i} href={s.href} target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-white/70 transition-colors hover:bg-white/10 hover:text-white">
                   <s.icon className="h-4 w-4" />
                 </a>
               ))}
@@ -56,7 +56,11 @@ const Footer = () => {
             <ul className="mt-4 space-y-2.5 text-sm">
               <li className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-secondary" />
-                <a href="mailto:princejosim80@gmail.com" className="hover:text-white">princejosim80@gmail.com</a>
+                <a href="mailto:orthoautomate@gmail.com" className="hover:text-white">orthoautomate@gmail.com</a>
+              </li>
+              <li className="flex items-center gap-2">
+                <Phone className="h-4 w-4 text-secondary" />
+                <a href="tel:+966552190206" className="hover:text-white">+966 55 219 0206</a>
               </li>
               <li className="text-white/50">Mon–Fri · 9am–6pm EST</li>
             </ul>
