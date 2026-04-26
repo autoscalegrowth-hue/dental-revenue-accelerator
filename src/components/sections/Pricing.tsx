@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Check, Sparkles, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { CALENDLY_URL } from "@/lib/links";
+import CalendlyDialog from "@/components/CalendlyDialog";
 
 type Plan = {
   name: string;
@@ -145,14 +145,15 @@ const Pricing = () => {
                   {yearly ? `Billed yearly · Save $${plan.yearlySavings.toLocaleString()}/yr` : "Billed monthly · Cancel anytime"}
                 </div>
 
-                <Button
-                  asChild
-                  variant={plan.highlight ? "accent" : "outline"}
-                  size="lg"
-                  className={`mt-6 w-full ${!plan.highlight ? "border-white/20 bg-white/5 text-white hover:bg-white/10" : ""}`}
-                >
-                  <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">{plan.cta}</a>
-                </Button>
+                <CalendlyDialog title={`${plan.name} — Book a Call`}>
+                  <Button
+                    variant={plan.highlight ? "accent" : "outline"}
+                    size="lg"
+                    className={`mt-6 w-full ${!plan.highlight ? "border-white/20 bg-white/5 text-white hover:bg-white/10" : ""}`}
+                  >
+                    {plan.cta}
+                  </Button>
+                </CalendlyDialog>
 
                 <ul className="mt-7 space-y-3">
                   {plan.features.map((f) => (

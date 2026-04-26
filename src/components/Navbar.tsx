@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo.png";
 import { Button } from "@/components/ui/button";
-import { CALENDLY_URL } from "@/lib/links";
+import CalendlyDialog from "@/components/CalendlyDialog";
 
 const links = [
   { href: "#problem", label: "Problem" },
@@ -53,9 +53,9 @@ const Navbar = () => {
         </div>
 
         <div className="hidden lg:block">
-          <Button asChild variant="accent" size="lg">
-            <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">Book a Call</a>
-          </Button>
+          <CalendlyDialog>
+            <Button variant="accent" size="lg">Book a Call</Button>
+          </CalendlyDialog>
         </div>
 
         <button
@@ -80,9 +80,9 @@ const Navbar = () => {
                 {l.label}
               </a>
             ))}
-            <Button asChild variant="accent" size="lg" className="mt-3">
-              <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)}>Book a Call</a>
-            </Button>
+            <CalendlyDialog>
+              <Button variant="accent" size="lg" className="mt-3" onClick={() => setOpen(false)}>Book a Call</Button>
+            </CalendlyDialog>
           </div>
         </div>
       )}

@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
-import { CALENDLY_URL } from "@/lib/links";
+import CalendlyEmbed from "@/components/CalendlyEmbed";
 
 const auditSchema = z.object({
   name: z.string().trim().min(2, "Please enter your name").max(80),
@@ -39,11 +39,11 @@ const AuditForm = () => {
     await new Promise((r) => setTimeout(r, 900));
     setLoading(false);
     setDone(true);
-    toast.success("Audit request received. Opening our calendar so you can pick a time…");
-    // Send them straight to Calendly so the meeting lands in your account.
+    toast.success("Audit request received. Pick a time below to lock in your call.");
+    // Smoothly scroll to the inline Calendly widget on the same page.
     setTimeout(() => {
-      window.open(CALENDLY_URL, "_blank", "noopener,noreferrer");
-    }, 600);
+      document.getElementById("book-call")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 400);
   };
 
   return (
@@ -116,6 +116,23 @@ const AuditForm = () => {
             </Button>
             <p className="mt-3 text-center text-xs text-white/50">No spam. No long sales call. Real numbers.</p>
           </motion.form>
+        </div>
+
+        <div id="book-call" className="mt-20 scroll-mt-24">
+          <div className="mx-auto max-w-3xl text-center">
+            <span className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-accent">
+              Or skip ahead — book directly
+            </span>
+            <h3 className="mt-5 font-display text-3xl font-bold leading-tight tracking-tight text-white md:text-4xl">
+              Pick a time that works <span className="text-gradient">for you</span>
+            </h3>
+            <p className="mt-3 text-white/70">
+              30-minute strategy call. We map your biggest revenue leaks live on the call.
+            </p>
+          </div>
+          <div className="mt-8 overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] p-2 backdrop-blur-xl shadow-elevated">
+            <CalendlyEmbed height={720} />
+          </div>
         </div>
       </div>
     </section>

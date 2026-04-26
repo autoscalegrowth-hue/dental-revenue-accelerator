@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, PlayCircle, ShieldCheck, Clock, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { CALENDLY_URL } from "@/lib/links";
+import CalendlyDialog from "@/components/CalendlyDialog";
 
 const Hero = () => {
   return (
@@ -57,11 +57,11 @@ const Hero = () => {
               Get Free Revenue Audit <ArrowRight />
             </a>
           </Button>
-          <Button asChild variant="outlineLight" size="xl">
-            <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
+          <CalendlyDialog>
+            <Button variant="outlineLight" size="xl">
               <PlayCircle /> Book a Call
-            </a>
-          </Button>
+            </Button>
+          </CalendlyDialog>
         </motion.div>
 
         <motion.div
