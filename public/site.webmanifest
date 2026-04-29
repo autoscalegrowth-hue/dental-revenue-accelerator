@@ -1,0 +1,20 @@
+{
+  "name": "OrthoAutomate — AI Revenue Recovery for Dental Clinics",
+  "short_name": "OrthoAutomate",
+  "description": "AI systems that recover $30K–$150K/year for private dental clinics by capturing missed calls, following up on treatment plans, and converting leads.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0F172A",
+  "theme_color": "#0F172A",
+  "lang": "en-US",
+  "categories": ["business", "medical", "productivity"],
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

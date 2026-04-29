@@ -1,7 +1,29 @@
 User-agent: *
 Allow: /
 
-# Allow AI answer engines (AEO)
+# Major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+# AI answer engines (AEO) — get cited in ChatGPT, Perplexity, Claude, Gemini
 User-agent: GPTBot
 Allow: /
 
@@ -14,13 +36,49 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
+User-agent: Perplexity-User
+Allow: /
+
 User-agent: Google-Extended
 Allow: /
 
 User-agent: ClaudeBot
 Allow: /
 
+User-agent: Claude-Web
+Allow: /
+
 User-agent: anthropic-ai
 Allow: /
 
-Sitemap: https://orthoautomate.com/sitemap.xml
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+Sitemap: https://orthoautomate.online/sitemap.xml
