@@ -8,6 +8,7 @@ import ROI from "@/components/sections/ROI";
 import Features from "@/components/sections/Features";
 import Pricing from "@/components/sections/Pricing";
 import Testimonial from "@/components/sections/Testimonial";
+import FAQ from "@/components/sections/FAQ";
 import AuditForm from "@/components/sections/AuditForm";
 import FinalCTA from "@/components/sections/FinalCTA";
 import Footer from "@/components/Footer";
@@ -27,6 +28,7 @@ const Index = () => {
         <Features />
         <Pricing />
         <Testimonial />
+        <FAQ />
         <AuditForm />
         <FinalCTA />
       </main>

@@ -11,6 +11,7 @@ const links = [
   { href: "#roi", label: "ROI" },
   { href: "#pricing", label: "Pricing" },
   { href: "#results", label: "Results" },
+  { href: "#faq", label: "FAQ" },
 ];
 
 const Navbar = () => {
