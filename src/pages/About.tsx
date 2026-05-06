@@ -226,11 +226,11 @@ const AboutPage = () => {
           </h2>
           <article className="mt-6 rounded-2xl border border-border bg-card p-6 shadow-card-soft md:p-8">
             <h3 className="font-display text-xl font-semibold text-foreground">
-              Mohammed Al-Qahtani
+              Jashim Uddin
               <span className="ml-2 text-sm font-normal text-muted-foreground">— Founder & CEO</span>
             </h3>
             <p className="mt-3 leading-relaxed text-muted-foreground">
-              Mohammed founded OrthoAutomate in 2024 after spending years running paid-ads and marketing operations for private dental and orthodontic clinics across the Middle East and North America. He saw firsthand how clinics were burning ad budgets on leads that never got a call back, and how six-figure treatment plans sat unaccepted in PMS reports for months. OrthoAutomate is his answer: a dental-only AI stack that closes those gaps automatically.
+              Jashim founded OrthoAutomate in 2024 after spending years working with private dental and orthodontic clinics on marketing and operations. He saw firsthand how clinics were burning ad budgets on leads that never got a call back, and how six-figure treatment plans sat unaccepted in PMS reports for months. OrthoAutomate is his answer: a dental-only AI stack that closes those gaps automatically.
             </p>
           </article>
         </section>
