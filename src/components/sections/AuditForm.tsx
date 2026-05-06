@@ -36,6 +36,30 @@ const benefits = [
 const AuditForm = () => {
   const [loading, setLoading] = useState(false);
   const [done, setDone] = useState(false);
+  const [focus, setFocus] = useState<FocusValue>("all");
+
+  // Pre-select focus from URL hash/query or referring FAQ category.
+  useEffect(() => {
+    const detect = (): FocusValue | null => {
+      if (typeof window === "undefined") return null;
+      const hash = window.location.hash.toLowerCase();
+      const search = window.location.search.toLowerCase();
+      const ref = document.referrer.toLowerCase();
+      const haystack = `${hash} ${search} ${ref}`;
+
+      // Explicit ?focus= param wins
+      const params = new URLSearchParams(window.location.search);
+      const explicit = params.get("focus") as FocusValue | null;
+      if (explicit && FOCUS_OPTIONS.some((o) => o.value === explicit)) return explicit;
+
+      if (/missed.?call|receptionist|ai.?receptionist|phone/.test(haystack)) return "missed-calls";
+      if (/treatment|reactivat|unaccepted|follow.?up.?treatment/.test(haystack)) return "treatment";
+      if (/lead|ad.?lead|response|booking|funnel/.test(haystack)) return "leads";
+      return null;
+    };
+    const detected = detect();
+    if (detected) setFocus(detected);
+  }, []);
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
