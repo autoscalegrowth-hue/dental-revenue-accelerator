@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { z } from "zod";
 import { motion } from "framer-motion";
 import { Check, Loader2, Send } from "lucide-react";
@@ -8,12 +8,22 @@ import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import CalendlyEmbed from "@/components/CalendlyEmbed";
 
+const FOCUS_OPTIONS = [
+  { value: "missed-calls", label: "Missed calls (AI Receptionist)" },
+  { value: "leads", label: "Lead follow-up (Ad Lead Response)" },
+  { value: "treatment", label: "Treatment plan reactivation" },
+  { value: "all", label: "All three — full audit" },
+] as const;
+
+type FocusValue = (typeof FOCUS_OPTIONS)[number]["value"];
+
 const auditSchema = z.object({
   name: z.string().trim().min(2, "Please enter your name").max(80),
   email: z.string().trim().email("Enter a valid email").max(255),
   clinic: z.string().trim().min(2, "Enter your clinic name").max(120),
   phone: z.string().trim().min(7, "Enter a valid phone").max(30),
   revenue: z.string().trim().max(40).optional(),
+  focus: z.enum(["missed-calls", "leads", "treatment", "all"]).optional(),
 });
 
 const benefits = [
