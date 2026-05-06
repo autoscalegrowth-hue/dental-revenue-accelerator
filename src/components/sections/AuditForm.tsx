@@ -138,6 +138,23 @@ const AuditForm = () => {
                 <Input id="clinic" name="clinic" required maxLength={120} className="mt-1.5 border-white/15 bg-white/5 text-white placeholder:text-white/40" placeholder="Smile Dental Studio" />
               </div>
               <div>
+                <Label htmlFor="focus" className="text-white/80">What do you want to focus on?</Label>
+                <select
+                  id="focus"
+                  name="focus"
+                  value={focus}
+                  onChange={(e) => setFocus(e.target.value as FocusValue)}
+                  className="mt-1.5 flex h-10 w-full rounded-md border border-white/15 bg-white/5 px-3 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-secondary/50"
+                >
+                  {FOCUS_OPTIONS.map((o) => (
+                    <option key={o.value} value={o.value} className="bg-surface-darker text-white">
+                      {o.label}
+                    </option>
+                  ))}
+                </select>
+                <p className="mt-1.5 text-xs text-white/50">Pre-selected based on what you read — change anytime.</p>
+              </div>
+              <div>
                 <Label htmlFor="revenue" className="text-white/80">Annual revenue (optional)</Label>
                 <Input id="revenue" name="revenue" maxLength={40} className="mt-1.5 border-white/15 bg-white/5 text-white placeholder:text-white/40" placeholder="$1.2M" />
               </div>
