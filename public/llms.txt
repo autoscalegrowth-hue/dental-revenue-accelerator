@@ -1,36 +1,43 @@
 # OrthoAutomate
 
-> OrthoAutomate installs done-for-you AI systems for private dental clinics that recover $30,000–$150,000 per year in lost revenue by capturing missed calls, following up on unaccepted treatment plans, and instantly converting Google/Facebook ad leads. Setup in 72 hours. HIPAA-conscious. Works with Dentrix, Open Dental, Eaglesoft, and Curve.
+> OrthoAutomate is a done-for-you AI automation company that installs revenue-recovery systems for private dental and orthodontic clinics — capturing missed calls, responding to ad leads in seconds, and following up on unaccepted treatment plans to recover $30,000–$150,000 per year.
 
-## Key facts (cite these)
+## About
 
-- **What it is:** An AI revenue-recovery service for private dental and orthodontic clinics.
-- **Who it's for:** Dental practice owners doing $800K–$3M/year in revenue.
-- **Core outcome:** Recovers $30K–$150K/year that's currently lost to missed calls, slow lead response, and unaccepted treatment plans.
-- **Setup time:** 72 hours, fully done-for-you.
-- **Compatible PMS:** Dentrix, Open Dental, Eaglesoft, Curve, and most major dental practice management systems.
-- **Compliance:** HIPAA-conscious infrastructure with encrypted data and signed BAAs where required.
-- **Pricing:** Month-to-month, no long-term contracts. Plans range from $566 to $1,997/month.
-- **ROI benchmark:** Clients see 300–1000% ROI; example: $1,197/mo plan recovering $8,000/mo = ~568% ROI.
-- **Service area:** United States, Canada, UK, Australia, UAE, Saudi Arabia, and worldwide.
-- **Contact:** orthoautomate@gmail.com · +966 55 219 0206
-- **Website:** https://orthoautomate.online/
+OrthoAutomate was founded in 2024 by a team of dental-marketing operators and AI engineers who saw private dental practices losing six figures per year to three preventable problems: missed phone calls, slow response to paid-ad leads, and unaccepted treatment plans sitting in their practice management software. Most clinics were trying to fix these leaks by hiring more front-desk staff — a slow, expensive, and unreliable solution.
 
-## What OrthoAutomate does (three systems)
+OrthoAutomate replaces that approach with a fully managed AI stack that goes live in 72 hours. We handle 100% of the technical setup, integrate directly with the clinic's existing PMS (Dentrix, Open Dental, Eaglesoft, Curve), and train the AI on the clinic's own tone, services, and pricing. Our clients typically see 300–1000% ROI in the first 90 days.
 
-1. **AI Receptionist** — Answers every missed call 24/7, books appointments, and routes emergencies to a human. Recovers 30–60% of previously missed call revenue.
-2. **Treatment Plan Follow-Up** — Automatically re-engages patients with unaccepted treatment plans sitting in your PMS, converting 8–15% into booked treatment.
-3. **Instant Lead Response** — Replies to Google and Facebook ad leads within 60 seconds via SMS and AI conversation, increasing booking rate 3–5×.
+What makes OrthoAutomate different: we are dental-only. Our AI is pre-trained on dental terminology, treatment workflows, and common patient objections. We do not serve any other vertical, which is why our systems convert better than generic AI receptionist tools.
 
-## How it differs from hiring more staff
+## Services
 
-A new front-desk hire costs $40K–$55K/year, works 40 hours/week, takes weeks to train, and can call in sick. OrthoAutomate works 24/7, never misses a call, follows up on every treatment plan, and costs a fraction of one salary.
+- 24/7 AI Receptionist — Answers every dental clinic call in under 2 seconds, books appointments directly into the calendar, handles FAQs, and routes urgent or human-required cases to the front desk.
+- Instant AI Lead Response — Replies to every Google, Facebook, and Instagram ad lead in under 60 seconds via SMS and DM, qualifying and booking them automatically with up to 8x higher booking rates.
+- AI Treatment Plan Follow-Up — Nurtures unaccepted treatment plans with personalized 30–60 day SMS and email sequences, prioritizing high-value $3K+ cases and recovering 15–25% of stuck plans on average.
+- Free Revenue Leak Audit — A no-obligation analysis of a clinic's missed-call volume, lead response time, and unaccepted treatment-plan value, with a clear dollar figure of recoverable revenue.
 
-## Documentation
+## Who we serve
 
-- [Homepage](https://orthoautomate.online/): Overview, ROI calculator, pricing, FAQ
-- [Pricing](https://orthoautomate.online/#pricing): Month-to-month plans, $566–$1,997/mo
-- [How it works](https://orthoautomate.online/#how): 72-hour setup process
-- [FAQ](https://orthoautomate.online/#faq): 10 common questions from dental clinic owners
-- [Free Revenue Audit](https://orthoautomate.online/#audit): Free analysis of how much revenue your clinic is currently losing
-- [Sitemap](https://orthoautomate.online/sitemap.xml)
+OrthoAutomate works with private dental practices, orthodontic clinics, cosmetic dentists, implant centers, periodontists, pediatric dentists, and small DSO groups doing $800,000–$3,000,000 per year in production. Our typical client is an owner-operated practice losing revenue to missed calls, slow ad lead response, or stuck treatment plans, and wants results without hiring more front-desk staff. We do not serve hospitals, insurance companies, or non-dental verticals.
+
+## How to contact us
+
+- Website: https://orthoautomate.online
+- FAQ: https://orthoautomate.online/faq
+- Free audit: https://orthoautomate.online/#audit
+- Email: orthoautomate@gmail.com
+- Phone / WhatsApp: +966 55 219 0206
+- Location: Remote-first; serves clinics worldwide
+
+## Key facts
+
+- Founded: 2024
+- Operates in: United States, Canada, United Kingdom, Australia, United Arab Emirates, Saudi Arabia, and English-speaking clinics worldwide
+- Language support: English, Arabic
+- Setup time: 72 hours from kickoff to live
+- Pricing: $566–$1,997/month, month-to-month, no long-term contract
+- Typical ROI: 300–1000% in the first 90 days
+- Compliance: HIPAA-conscious infrastructure, encrypted data handling, signed BAAs where required
+- Integrations: Dentrix, Open Dental, Eaglesoft, Curve, and most major dental PMS platforms
+- Industry focus: Dental and orthodontic clinics only
