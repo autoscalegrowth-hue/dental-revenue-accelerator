@@ -61,7 +61,7 @@ const IntroAnimation = () => {
               animate={{ y: [0, -6, 0] }}
               transition={{ duration: 2, ease: "easeInOut", repeat: Infinity }}
             >
-              <img src={logo} alt="OrthoAutomate" className="h-28 w-auto md:h-36" />
+              <img src={logo} alt="OrthoAutomate logo" width="288" height="144" decoding="async" fetchPriority="high" className="h-28 w-auto md:h-36" />
             </motion.div>
 
             <motion.div
