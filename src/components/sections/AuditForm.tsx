@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { z } from "zod";
 import { motion } from "framer-motion";
 import { Check, Loader2, Send } from "lucide-react";
@@ -8,12 +8,22 @@ import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import CalendlyEmbed from "@/components/CalendlyEmbed";
 
+const FOCUS_OPTIONS = [
+  { value: "missed-calls", label: "Missed calls (AI Receptionist)" },
+  { value: "leads", label: "Lead follow-up (Ad Lead Response)" },
+  { value: "treatment", label: "Treatment plan reactivation" },
+  { value: "all", label: "All three — full audit" },
+] as const;
+
+type FocusValue = (typeof FOCUS_OPTIONS)[number]["value"];
+
 const auditSchema = z.object({
   name: z.string().trim().min(2, "Please enter your name").max(80),
   email: z.string().trim().email("Enter a valid email").max(255),
   clinic: z.string().trim().min(2, "Enter your clinic name").max(120),
   phone: z.string().trim().min(7, "Enter a valid phone").max(30),
   revenue: z.string().trim().max(40).optional(),
+  focus: z.enum(["missed-calls", "leads", "treatment", "all"]).optional(),
 });
 
 const benefits = [
@@ -26,6 +36,30 @@ const benefits = [
 const AuditForm = () => {
   const [loading, setLoading] = useState(false);
   const [done, setDone] = useState(false);
+  const [focus, setFocus] = useState<FocusValue>("all");
+
+  // Pre-select focus from URL hash/query or referring FAQ category.
+  useEffect(() => {
+    const detect = (): FocusValue | null => {
+      if (typeof window === "undefined") return null;
+      const hash = window.location.hash.toLowerCase();
+      const search = window.location.search.toLowerCase();
+      const ref = document.referrer.toLowerCase();
+      const haystack = `${hash} ${search} ${ref}`;
+
+      // Explicit ?focus= param wins
+      const params = new URLSearchParams(window.location.search);
+      const explicit = params.get("focus") as FocusValue | null;
+      if (explicit && FOCUS_OPTIONS.some((o) => o.value === explicit)) return explicit;
+
+      if (/missed.?call|receptionist|ai.?receptionist|phone/.test(haystack)) return "missed-calls";
+      if (/treatment|reactivat|unaccepted|follow.?up.?treatment/.test(haystack)) return "treatment";
+      if (/lead|ad.?lead|response|booking|funnel/.test(haystack)) return "leads";
+      return null;
+    };
+    const detected = detect();
+    if (detected) setFocus(detected);
+  }, []);
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -102,6 +136,23 @@ const AuditForm = () => {
               <div>
                 <Label htmlFor="clinic" className="text-white/80">Clinic name</Label>
                 <Input id="clinic" name="clinic" required maxLength={120} className="mt-1.5 border-white/15 bg-white/5 text-white placeholder:text-white/40" placeholder="Smile Dental Studio" />
+              </div>
+              <div>
+                <Label htmlFor="focus" className="text-white/80">What do you want to focus on?</Label>
+                <select
+                  id="focus"
+                  name="focus"
+                  value={focus}
+                  onChange={(e) => setFocus(e.target.value as FocusValue)}
+                  className="mt-1.5 flex h-10 w-full rounded-md border border-white/15 bg-white/5 px-3 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-secondary/50"
+                >
+                  {FOCUS_OPTIONS.map((o) => (
+                    <option key={o.value} value={o.value} className="bg-surface-darker text-white">
+                      {o.label}
+                    </option>
+                  ))}
+                </select>
+                <p className="mt-1.5 text-xs text-white/50">Pre-selected based on what you read — change anytime.</p>
               </div>
               <div>
                 <Label htmlFor="revenue" className="text-white/80">Annual revenue (optional)</Label>

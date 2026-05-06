@@ -196,29 +196,60 @@ const FAQPage = () => {
         </section>
 
         <section className="container-px mx-auto max-w-3xl pb-24 md:pb-32">
-          {categories.map((cat) => (
-            <section key={cat.id} id={cat.id} className="mb-12 scroll-mt-28">
-              <h2 className="font-display text-2xl font-bold tracking-tight text-foreground md:text-3xl">
-                {cat.title}
-              </h2>
-              <div className="mt-6 space-y-6">
-                {cat.items.map((item) => (
-                  <article
-                    key={item.id}
-                    id={item.id}
-                    className="scroll-mt-28 rounded-2xl border border-border bg-card p-6 shadow-card-soft md:p-8"
-                  >
-                    <h3 className="font-display text-lg font-semibold text-foreground md:text-xl">
-                      <a href={`#${item.id}`} className="hover:text-primary">
-                        {item.q}
-                      </a>
-                    </h3>
-                    <p className="mt-3 leading-relaxed text-muted-foreground">{item.a}</p>
-                  </article>
-                ))}
-              </div>
-            </section>
-          ))}
+          {categories.map((cat) => {
+            const focusByCategory: Record<string, string | null> = {
+              services: "all",
+              about: null,
+              clients: null,
+              process: "all",
+              pricing: "all",
+            };
+            // Per-category targeted CTA focus (more specific where it matters)
+            const ctaFocus =
+              cat.id === "services" ? "missed-calls" :
+              cat.id === "process" ? "all" :
+              cat.id === "pricing" ? "all" :
+              focusByCategory[cat.id] ?? null;
+
+            return (
+              <section key={cat.id} id={cat.id} className="mb-12 scroll-mt-28">
+                <h2 className="font-display text-2xl font-bold tracking-tight text-foreground md:text-3xl">
+                  {cat.title}
+                </h2>
+                <div className="mt-6 space-y-6">
+                  {cat.items.map((item) => {
+                    const itemFocus =
+                      /missed.?call|receptionist|phone/i.test(item.q + " " + item.a) ? "missed-calls" :
+                      /treatment|reactivat|unaccepted/i.test(item.q + " " + item.a) ? "treatment" :
+                      /lead|ad.?lead|response.?time|booking rate/i.test(item.q + " " + item.a) ? "leads" :
+                      ctaFocus;
+                    return (
+                      <article
+                        key={item.id}
+                        id={item.id}
+                        className="scroll-mt-28 rounded-2xl border border-border bg-card p-6 shadow-card-soft md:p-8"
+                      >
+                        <h3 className="font-display text-lg font-semibold text-foreground md:text-xl">
+                          <a href={`#${item.id}`} className="hover:text-primary">
+                            {item.q}
+                          </a>
+                        </h3>
+                        <p className="mt-3 leading-relaxed text-muted-foreground">{item.a}</p>
+                        {itemFocus && (
+                          <Link
+                            to={`/?focus=${itemFocus}#audit`}
+                            className="mt-4 inline-flex items-center text-sm font-semibold text-primary hover:underline"
+                          >
+                            Get a free audit on this →
+                          </Link>
+                        )}
+                      </article>
+                    );
+                  })}
+                </div>
+              </section>
+            );
+          })}
 
           <div className="mt-16 rounded-2xl border border-border bg-card p-8 text-center shadow-card-soft">
             <h2 className="font-display text-2xl font-bold text-foreground">Still have questions?</h2>
@@ -226,7 +257,7 @@ const FAQPage = () => {
               Get a free revenue audit and we'll show you exactly how much your clinic is losing each month.
             </p>
             <Link
-              to="/#audit"
+              to="/?focus=all#audit"
               className="mt-6 inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
             >
               Get my free audit
