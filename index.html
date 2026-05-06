@@ -48,6 +48,42 @@
     <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+    <!-- Consolidated @graph schema (Organization + WebSite) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://orthoautomate.online/#organization",
+          "name": "OrthoAutomate",
+          "url": "https://orthoautomate.online",
+          "logo": "https://orthoautomate.online/favicon.png",
+          "description": "OrthoAutomate installs AI revenue-recovery systems for private dental clinics that capture missed calls, follow up on treatment plans, and convert leads automatically.",
+          "foundingDate": "2024",
+          "areaServed": "Worldwide",
+          "availableLanguage": ["English", "Arabic"],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "email": "orthoautomate@gmail.com",
+            "telephone": "+966552190206"
+          },
+          "sameAs": [
+            "https://www.facebook.com/orthoautomate"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://orthoautomate.online/#website",
+          "url": "https://orthoautomate.online",
+          "name": "OrthoAutomate",
+          "publisher": { "@id": "https://orthoautomate.online/#organization" }
+        }
+      ]
+    }
+    </script>
+
     <!-- Organization & Service Schema (SEO + AEO) -->
     <script type="application/ld+json">
     {
