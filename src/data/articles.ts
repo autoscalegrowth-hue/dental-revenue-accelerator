@@ -28,7 +28,7 @@ export const articles: Article[] = [
     title: "How Much Revenue Are You Really Losing to Missed Calls?",
     summary:
       "Most private dental clinics lose $40,000–$120,000 a year to missed calls — here's how to measure it and stop the leak in 72 hours.",
-    author: "OrthoAutomate",
+    author: "Jashim Uddin",
     publishedAt: "2026-04-22",
     updatedAt: "2026-05-01",
     readingMinutes: 6,
@@ -84,7 +84,7 @@ export const articles: Article[] = [
     title: "The Treatment Plan Follow-Up Playbook That Reactivates 15–25% of Stuck Cases",
     summary:
       "A step-by-step framework for reactivating unaccepted dental treatment plans using AI follow-up sequences over 30–60 days.",
-    author: "OrthoAutomate",
+    author: "Jashim Uddin",
     publishedAt: "2026-04-29",
     updatedAt: "2026-05-04",
     readingMinutes: 7,
@@ -145,7 +145,7 @@ export const articles: Article[] = [
     title: "Why 60-Second Lead Response Time Doubles Your Dental Ad ROI",
     summary:
       "Lead response time is the single highest-leverage variable in paid dental marketing — here's the data and how AI fixes it.",
-    author: "OrthoAutomate",
+    author: "Jashim Uddin",
     publishedAt: "2026-05-05",
     updatedAt: "2026-05-05",
     readingMinutes: 5,

@@ -52,7 +52,17 @@ const BlogPost = () => {
       "@type": "Article",
       headline: article.title,
       description: article.summary,
-      author: { "@type": "Organization", name: article.author },
+      author: {
+        "@type": "Person",
+        name: article.author,
+        url: "https://orthoautomate.online/about#founder",
+        jobTitle: "Founder & CEO, OrthoAutomate",
+        worksFor: {
+          "@type": "Organization",
+          name: "OrthoAutomate",
+          url: "https://orthoautomate.online",
+        },
+      },
       publisher: {
         "@type": "Organization",
         name: "OrthoAutomate",
@@ -62,11 +72,16 @@ const BlogPost = () => {
           url: "https://orthoautomate.online/favicon.png",
         },
       },
+      image: "https://orthoautomate.online/og-image.jpg",
       datePublished: article.publishedAt,
       dateModified: article.updatedAt,
       mainEntityOfPage: `https://orthoautomate.online/blog/${article.slug}`,
       url: `https://orthoautomate.online/blog/${article.slug}`,
       keywords: article.tags.join(", "),
+      speakable: {
+        "@type": "SpeakableSpecification",
+        cssSelector: ["h1", "h2", ".speakable", "[data-speakable]"],
+      },
     };
 
     const breadcrumbSchema = {
