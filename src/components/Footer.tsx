@@ -1,4 +1,5 @@
 import { Mail, Phone, Facebook, Instagram, Twitter } from "lucide-react";
+import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
 
 const Footer = () => {
@@ -31,21 +32,24 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="font-display text-sm font-semibold uppercase tracking-wider text-white">Solutions</h4>
+            <h4 className="font-display text-sm font-semibold uppercase tracking-wider text-white">Services</h4>
             <ul className="mt-4 space-y-2.5 text-sm">
-              <li><a href="#solution" className="hover:text-white">AI Receptionist</a></li>
-              <li><a href="#solution" className="hover:text-white">Lead Response</a></li>
-              <li><a href="#solution" className="hover:text-white">Treatment Follow-Up</a></li>
-              <li><a href="#solution" className="hover:text-white">SMS Sequences</a></li>
+              <li><Link to="/services/ai-receptionist" className="hover:text-white">AI Receptionist</Link></li>
+              <li><Link to="/services/lead-response" className="hover:text-white">Instant Lead Response</Link></li>
+              <li><Link to="/services/treatment-followup" className="hover:text-white">Treatment Follow-Up</Link></li>
+              <li><Link to="/integrations" className="hover:text-white">Integrations</Link></li>
+              <li><Link to="/pricing" className="hover:text-white">Pricing</Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-display text-sm font-semibold uppercase tracking-wider text-white">Company</h4>
             <ul className="mt-4 space-y-2.5 text-sm">
-              <li><a href="#how" className="hover:text-white">How it works</a></li>
-              <li><a href="#results" className="hover:text-white">Case studies</a></li>
-              <li><a href="#audit" className="hover:text-white">Free Audit</a></li>
+              <li><Link to="/about" className="hover:text-white">About</Link></li>
+              <li><Link to="/case-studies" className="hover:text-white">Case studies</Link></li>
+              <li><Link to="/blog" className="hover:text-white">Blog</Link></li>
+              <li><Link to="/faq" className="hover:text-white">FAQ</Link></li>
+              <li><Link to="/contact" className="hover:text-white">Contact</Link></li>
             </ul>
           </div>
 
