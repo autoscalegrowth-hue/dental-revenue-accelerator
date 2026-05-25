@@ -29,14 +29,18 @@ const BlogPost = () => {
     };
 
     setMeta("description", article.summary);
+    setMeta("author", article.author);
+    setMeta("article:author", article.author, "property");
     setMeta("og:type", "article", "property");
     setMeta("og:title", article.title, "property");
     setMeta("og:description", article.summary, "property");
     setMeta("og:url", `https://orthoautomate.online/blog/${article.slug}`, "property");
+    setMeta("og:image", "https://orthoautomate.online/og-image.jpg", "property");
     setMeta("article:published_time", article.publishedAt, "property");
     setMeta("article:modified_time", article.updatedAt, "property");
     setMeta("twitter:title", article.title);
     setMeta("twitter:description", article.summary);
+    setMeta("twitter:image", "https://orthoautomate.online/og-image.jpg");
 
     let canonical = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]');
     if (!canonical) {
