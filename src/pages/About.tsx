@@ -71,8 +71,10 @@ const AboutPage = () => {
     setMeta("og:title", "About OrthoAutomate — AI for Dental Clinics", "property");
     setMeta("og:description", desc, "property");
     setMeta("og:url", "https://orthoautomate.online/about", "property");
+    setMeta("og:image", "https://orthoautomate.online/og-image.jpg", "property");
     setMeta("twitter:title", "About OrthoAutomate — AI for Dental Clinics");
     setMeta("twitter:description", desc);
+    setMeta("twitter:image", "https://orthoautomate.online/og-image.jpg");
 
     let canonical = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]');
     if (!canonical) {

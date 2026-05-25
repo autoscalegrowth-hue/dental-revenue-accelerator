@@ -29,14 +29,18 @@ const BlogPost = () => {
     };
 
     setMeta("description", article.summary);
+    setMeta("author", article.author);
+    setMeta("article:author", article.author, "property");
     setMeta("og:type", "article", "property");
     setMeta("og:title", article.title, "property");
     setMeta("og:description", article.summary, "property");
     setMeta("og:url", `https://orthoautomate.online/blog/${article.slug}`, "property");
+    setMeta("og:image", "https://orthoautomate.online/og-image.jpg", "property");
     setMeta("article:published_time", article.publishedAt, "property");
     setMeta("article:modified_time", article.updatedAt, "property");
     setMeta("twitter:title", article.title);
     setMeta("twitter:description", article.summary);
+    setMeta("twitter:image", "https://orthoautomate.online/og-image.jpg");
 
     let canonical = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]');
     if (!canonical) {
@@ -52,7 +56,17 @@ const BlogPost = () => {
       "@type": "Article",
       headline: article.title,
       description: article.summary,
-      author: { "@type": "Organization", name: article.author },
+      author: {
+        "@type": "Person",
+        name: article.author,
+        url: "https://orthoautomate.online/about#founder",
+        jobTitle: "Founder & CEO, OrthoAutomate",
+        worksFor: {
+          "@type": "Organization",
+          name: "OrthoAutomate",
+          url: "https://orthoautomate.online",
+        },
+      },
       publisher: {
         "@type": "Organization",
         name: "OrthoAutomate",
@@ -62,11 +76,16 @@ const BlogPost = () => {
           url: "https://orthoautomate.online/favicon.png",
         },
       },
+      image: "https://orthoautomate.online/og-image.jpg",
       datePublished: article.publishedAt,
       dateModified: article.updatedAt,
       mainEntityOfPage: `https://orthoautomate.online/blog/${article.slug}`,
       url: `https://orthoautomate.online/blog/${article.slug}`,
       keywords: article.tags.join(", "),
+      speakable: {
+        "@type": "SpeakableSpecification",
+        cssSelector: ["h1", "h2", ".speakable", "[data-speakable]"],
+      },
     };
 
     const breadcrumbSchema = {
