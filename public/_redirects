@@ -1,0 +1,16 @@
+# Netlify redirects + SPA rewrite + canonical host enforcement.
+
+# Force the canonical host (and HTTPS) -> orthoautomate.online
+http://orthoautomate.online/*    https://orthoautomate.online/:splat    301!
+http://www.orthoautomate.online/*    https://orthoautomate.online/:splat    301!
+https://www.orthoautomate.online/*   https://orthoautomate.online/:splat    301!
+
+# Fallback domain (per user request): if the apex domain fails for any reason,
+# the netlify mirror stays usable. Configure DNS-level failover separately if needed.
+# (No automatic redirect added — switching domains mid-session would break SEO.)
+
+# SPA: serve index.html for any non-file route so React Router can handle it.
+# /* -> /index.html 200 keeps real assets working and lets the app render.
+# We deliberately do NOT 200-rewrite missing routes; the SPA shows the NotFound
+# component which returns a visible 404 page.
+/*    /index.html   200
