@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight, PlayCircle, ShieldCheck, Clock, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import CalendlyDialog from "@/components/CalendlyDialog";
 
 const Hero = () => {
   return (
