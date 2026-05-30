@@ -31,9 +31,8 @@ const Hero = () => {
           transition={{ duration: 0.7, delay: 0.05 }}
           className="mx-auto max-w-5xl text-center font-display text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
         >
-          Dental Clinics Are Losing{" "}
-          <span className="text-gradient-accent whitespace-nowrap">$80K–$150K</span>{" "}
-          Every Year — <span className="text-gradient">We Recover It</span>
+          Recover Missed Dental Revenue{" "}
+          <span className="text-gradient">With AI</span>
         </motion.h1>
 
         <motion.p
@@ -42,8 +41,8 @@ const Hero = () => {
           transition={{ duration: 0.7, delay: 0.15 }}
           className="mx-auto mt-7 max-w-2xl text-center text-lg leading-relaxed text-white/70 md:text-xl"
         >
-          We install AI systems that capture missed calls, follow up with patients, and convert
-          unaccepted treatments into booked revenue — automatically.
+          OrthoAutomate helps dental clinics capture missed calls, follow up unsold treatment plans,
+          convert leads, and recover lost production — without adding front-desk staff.
         </motion.p>
 
         <motion.div
@@ -54,14 +53,14 @@ const Hero = () => {
         >
           <Button asChild variant="accent" size="xl">
             <a href="#audit">
-              Get Free Revenue Audit <ArrowRight />
+              Book a 15-Minute Revenue Audit <ArrowRight />
             </a>
           </Button>
-          <CalendlyDialog>
-            <Button variant="outlineLight" size="xl">
-              <PlayCircle /> Book a Call
-            </Button>
-          </CalendlyDialog>
+          <Button asChild variant="outlineLight" size="xl">
+            <a href="/roi-calculator">
+              <PlayCircle /> Calculate Missed Revenue
+            </a>
+          </Button>
         </motion.div>
 
         <motion.div
