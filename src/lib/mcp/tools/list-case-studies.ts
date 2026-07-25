@@ -1,5 +1,5 @@
 import { defineTool } from "@lovable.dev/mcp-js";
-import { caseStudies } from "@/data/caseStudies";
+import { caseStudies } from "../../../data/caseStudies";
 
 const SITE = "https://orthoautomate.online";
 

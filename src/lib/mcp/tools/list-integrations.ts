@@ -1,5 +1,5 @@
 import { defineTool } from "@lovable.dev/mcp-js";
-import { integrations } from "@/data/integrations";
+import { integrations } from "../../../data/integrations";
 
 const SITE = "https://orthoautomate.online";
 

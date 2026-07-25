@@ -1,8 +1,8 @@
 import { defineTool } from "@lovable.dev/mcp-js";
-import { services } from "@/data/services";
-import { integrations } from "@/data/integrations";
-import { landingPages } from "@/data/landingPages";
-import { CALENDLY_URL } from "@/lib/links";
+import { services } from "../../../data/services";
+import { integrations } from "../../../data/integrations";
+import { landingPages } from "../../../data/landingPages";
+import { CALENDLY_URL } from "../../links";
 
 const SITE = "https://orthoautomate.online";
 

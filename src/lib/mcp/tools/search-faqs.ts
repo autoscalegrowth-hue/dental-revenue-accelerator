@@ -1,7 +1,7 @@
 import { defineTool } from "@lovable.dev/mcp-js";
 import { z } from "zod";
-import { services } from "@/data/services";
-import { landingPages } from "@/data/landingPages";
+import { services } from "../../../data/services";
+import { landingPages } from "../../../data/landingPages";
 
 const SITE = "https://orthoautomate.online";
 

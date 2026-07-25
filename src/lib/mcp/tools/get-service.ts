@@ -1,6 +1,6 @@
 import { defineTool } from "@lovable.dev/mcp-js";
 import { z } from "zod";
-import { services } from "@/data/services";
+import { services } from "../../../data/services";
 
 const SITE = "https://orthoautomate.online";
 
