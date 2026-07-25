@@ -1,0 +1,181 @@
+{
+  "version": 1,
+  "sdk_version": "0.24.0",
+  "path": "/functions/v1/mcp",
+  "auth": {
+    "type": "none"
+  },
+  "mcp": {
+    "server": {
+      "name": "orthoautomate-mcp",
+      "version": "0.1.0",
+      "title": "OrthoAutomate"
+    },
+    "tools": [
+      {
+        "name": "get_company_info",
+        "title": "Get company info",
+        "description": "Get OrthoAutomate's public company facts: what it does, who it serves, founder, service and page map, and how to book a call. Good starting point for any question about the business.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "list_services",
+        "title": "List services",
+        "description": "List every OrthoAutomate service (AI receptionist, instant lead response, treatment-plan follow-up) with slug, tagline, summary and page URL.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "get_service",
+        "title": "Get service details",
+        "description": "Get the full public detail of one OrthoAutomate service: intro, outcomes, how it works, features, who it is best for, and its FAQs. Use list_services first to find the slug.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "slug": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Service slug, e.g. ai-receptionist, lead-response, treatment-followup."
+            }
+          },
+          "required": [
+            "slug"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "list_integrations",
+        "title": "List PMS integrations",
+        "description": "List the dental practice-management systems OrthoAutomate integrates with (Dentrix, Open Dental, Eaglesoft, Curve Dental), including supported capabilities and setup timeline.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "search_faqs",
+        "title": "Search FAQs",
+        "description": "Search OrthoAutomate's published FAQ answers about pricing, setup time, integrations, HIPAA/compliance, AI call handling and results. Omit the query to get every FAQ.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "query": {
+              "type": "string",
+              "description": "Keywords to match against questions and answers. Use an empty string for all FAQs."
+            },
+            "limit": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 50,
+              "description": "Maximum number of FAQs to return."
+            }
+          },
+          "required": [
+            "query",
+            "limit"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "list_case_studies",
+        "title": "List case studies",
+        "description": "List OrthoAutomate's published client case studies with clinic, location, service used, headline metrics, challenge, solution and result.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "list_articles",
+        "title": "List blog articles",
+        "description": "List OrthoAutomate blog articles with slug, title, one-sentence summary, author, publish/update dates and tags. Use get_article to read the full text.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "get_article",
+        "title": "Get blog article",
+        "description": "Read the full text of one OrthoAutomate blog article as markdown, including all sections and subsections. Use list_articles to find the slug.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "slug": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Article slug from list_articles."
+            }
+          },
+          "required": [
+            "slug"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "outputSchema": null
+      }
+    ]
+  }
+}
